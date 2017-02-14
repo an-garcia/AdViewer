@@ -43,7 +43,7 @@ public class SampleAdMobActivityInterstitial extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample_ad_mob_interstitial);
-        
+
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         // Create the next level button, which tries to show an interstitial when clicked.

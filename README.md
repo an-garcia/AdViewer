@@ -1,4 +1,7 @@
 # AdViewer
+
+![alt tag](https://github.com/an-garcia/AdViewer/blob/master/readmeImages/Screenshot_1487111336.png)
+
 Sample android application for learn Google AdMob based on [course](https://www.udacity.com/course/monetize-your-android-app-with-ads--ud876-3)
 Source at [AdViewer](https://github.com/udacity/google-play-services/tree/master/LessonAdMob_FINAL)
 
