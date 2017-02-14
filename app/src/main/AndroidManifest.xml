@@ -44,14 +44,24 @@
 
         <activity
             android:name=".SampleAdMobActivityInterstitial"
-            android:label="@string/title_activity_sample_ad_mob_interstitial" /> <!-- Include the AdActivity configChanges and theme. -->
+            android:label="@string/title_activity_sample_ad_mob_interstitial" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
             android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
             android:theme="@android:style/Theme.Translucent" />
+
         <activity
             android:name=".SampleAdMobActivityBanner"
-            android:label="@string/title_activity_sample_ad_mob_banner"/>
+            android:label="@string/title_activity_sample_ad_mob_banner">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
     </application>
 
 </manifest>

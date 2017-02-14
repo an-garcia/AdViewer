@@ -35,6 +35,9 @@ public class SampleAdMobActivityBanner extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sample_ad_mob_banner);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
         // Load an ad into the AdMob banner view.
         AdView adView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder()
