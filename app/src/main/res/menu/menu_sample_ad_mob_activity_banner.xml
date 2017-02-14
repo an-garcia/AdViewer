@@ -16,21 +16,10 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.xengar.android.adviewer.MainActivity">
+    tools:context="com.xengar.android.adviewer.SampleAdMobActivityBanner">
     <item
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:title="@string/action_settings"
-        app:showAsAction="never" />
-
-    <item
-        android:id="@+id/action_default_interstitial_ad"
-        android:orderInCategory="100"
-        android:title="@string/action_admob_sample_interstitial"
-        app:showAsAction="never" />
-    <item
-        android:id="@+id/action_default_banner_ad"
-        android:orderInCategory="100"
-        android:title="@string/action_admob_sample_banner"
         app:showAsAction="never" />
 </menu>

@@ -15,39 +15,41 @@
  */
 package com.xengar.android.adviewer;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
+public class SampleAdMobActivityBanner extends AppCompatActivity {
+    // Remove the below line after defining your own ad unit ID.
+    private static final String TOAST_TEXT = "Test ads are being shown. "
+            + "To show live ads, replace the ad unit ID in res/values/strings.xml with your own ad unit ID.";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_sample_ad_mob_banner);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        // Load an ad into the AdMob banner view.
+        AdView adView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder()
+                .setRequestAgent("android_studio:ad_template").build();
+        adView.loadAd(adRequest);
+
+        // Toasts the test ad message on the screen. Remove this after defining your own ad unit ID.
+        Toast.makeText(this, TOAST_TEXT, Toast.LENGTH_LONG).show();
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menu_sample_ad_mob_activity_banner, menu);
         return true;
     }
 
@@ -58,15 +60,11 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
-        } else if ( id == R.id.action_default_interstitial_ad) {
-            startActivity(new Intent(this, SampleAdMobActivityInterstitial.class));
-        } else if ( id == R.id.action_default_banner_ad) {
-            startActivity(new Intent(this, SampleAdMobActivityBanner.class));
         }
 
         return super.onOptionsItemSelected(item);
     }
+
 }
